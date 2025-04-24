@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:testproject/core/const/app_const_assets.dart';
 
-class TommyGroupUI extends StatelessWidget {
-  const TommyGroupUI({super.key});
+class AppAppBar extends StatelessWidget {
+  const AppAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -50,7 +50,7 @@ class ChatBubble extends StatelessWidget {
             border: Border.all(color: Color(0xffA7E9DC)),
             boxShadow: [
               BoxShadow(
-                color: Color(0xff0000001A).withOpacity(0.2),
+                color: Color(0xff00001A).withOpacity(0.2),
                 blurRadius: 4,
                 spreadRadius: 0,
                 offset: Offset(-2, 2),

@@ -30,7 +30,7 @@ class GroupChatPage extends StatelessWidget {
             body: SafeArea(
               child: Column(
                 children: [
-                  TommyGroupUI(),
+                  AppAppBar(),
                   const DateSeparator(date: "10 July 2025"),
                   Expanded(
                     child: BlocBuilder<ChatBloc, ChatState>(

@@ -13,9 +13,8 @@ class DateSeparator extends StatelessWidget {
         child: Center(
           child: Stack(
             children: [
-              // Outline
               Text(
-                '10 July 2025',
+                date,
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w400,
@@ -25,9 +24,8 @@ class DateSeparator extends StatelessWidget {
                     ..color = Color(0xFF72D6C6), // Outline color
                 ),
               ),
-              // Fill
               Text(
-                '10 July 2025',
+                date,
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w400,

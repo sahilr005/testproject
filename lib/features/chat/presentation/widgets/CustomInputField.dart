@@ -22,7 +22,7 @@ class CustomInputField extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Color(0xff00000026).withOpacity(0.15),
+            color: Color(0xff000026).withOpacity(0.15),
             blurRadius: 6,
             offset: Offset(0, -2),
           ),
