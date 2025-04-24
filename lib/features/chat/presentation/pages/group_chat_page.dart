@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:testproject/core/const/app_const_assets.dart';
+import 'package:testproject/core/helper/date_time_formate.dart';
 import 'package:testproject/features/chat/presentation/pages/appbar.dart';
 import '../blocs/chat_bloc.dart';
 import '../blocs/chat_event.dart';
@@ -31,17 +32,27 @@ class GroupChatPage extends StatelessWidget {
               child: Column(
                 children: [
                   AppAppBar(),
-                  const DateSeparator(date: "10 July 2025"),
                   Expanded(
                     child: BlocBuilder<ChatBloc, ChatState>(
                       builder: (context, state) {
-                        return ListView.builder(
+                        final grouped = <String, List<MessageModel>>{};
+                        for (var message in state.messages) {
+                          final dateKey = extractDate(message.time);
+                          grouped.putIfAbsent(dateKey, () => []).add(message);
+                        }
+
+                        final items = <Widget>[];
+                        grouped.forEach((date, messages) {
+                          items.add(DateSeparator(date: date));
+                          for (var message in messages) {
+                            items.add(ChatBubble(message: message));
+                          }
+                        });
+
+                        return ListView(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 16, vertical: 8),
-                          itemCount: state.messages.length,
-                          itemBuilder: (context, index) {
-                            return ChatBubble(message: state.messages[index]);
-                          },
+                          children: items,
                         );
                       },
                     ),

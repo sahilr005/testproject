@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testproject/core/helper/date_time_formate.dart';
 import 'package:testproject/core/theme/app_colors.dart';
 
 class MessageModel {
@@ -96,7 +97,7 @@ class ChatBubble extends StatelessWidget {
               Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  message.time,
+                  formatTime(message.time),
                   style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
